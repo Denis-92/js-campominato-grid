@@ -20,7 +20,26 @@ console.log('JS SCRIPT - OK');
 
 // 1) RILEVA IL CLICK SUL PULSANTE
 
+const clickButton = document.getElementById('grid-generator');
+
 // 2) GENERA UNA MATRICE CON 100 CELLE, DA VISUALIZZARE 10 CELLE PER RIGA
+
+clickButton.addEventListener('click', function () {
+    console.log('bottone cliccato!');
+
+    const gridElement = document.getElementById('grid-container')
+    gridElement.innerHTML = '';
+
+    for (let i = 0; i < 100; i++) {
+
+        const gridContent = document.createElement('div');
+        gridContent.className = 'grid-element';
+        gridContent.innerHTML = i + 1;
+
+        gridElement.append(gridContent);
+    }
+});
+
 
 // 3) INSERIRE UN NUMERO PROGRESSIVO DA 1 A 100 IN OGNI CELLA DELLA MATRICE APPENA CREATA
 
