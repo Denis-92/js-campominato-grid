@@ -1,0 +1,32 @@
+/* CSS RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+/*------------*/
+
+#button-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: grey;
+}
+
+#grid-generator {
+    width: 20%;
+    margin: 5% 40%;
+    padding: 10px 0;
+}
+
+#grid-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: aqua;
+    height: 1000px;
+}
