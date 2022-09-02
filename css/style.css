@@ -30,15 +30,22 @@ body {
     padding: 10px 0;
 }
 
-#grid-container {
+#grid-background {
     max-width: 1200px;
     margin: 0 auto;
     background-color: aqua;
-    height: 1000px;
+    height: 100vh;
+}
+
+#grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 calc(25% - 5px);
+    padding-top: 5%;
 }
 
 .grid-element {
-    width: 10vw;
-    height: 10vw;
+    width: 5vw;
+    height: 5vw;
     border: 1px solid black;
 }
