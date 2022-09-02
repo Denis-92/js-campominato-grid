@@ -18,6 +18,12 @@ body {
     background-color: grey;
 }
 
+.title {
+    color: purple;
+    text-align: center;
+    padding-top: 5%;
+}
+
 #grid-generator {
     width: 20%;
     margin: 5% 40%;
