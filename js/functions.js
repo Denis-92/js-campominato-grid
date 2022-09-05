@@ -13,6 +13,12 @@ function makeGrid() {
     // ATTENZIONE: FUNZIONA ANCHE COME RESET, CHE DESELEZIONA TUTTE LE CELLE CLICCATE PER CAMBIARE COLORE
     gridElement.innerHTML = '';
 
+    return gridElement;
+
+}
+
+// CREA GRID ORDINATA DA 1 A 100
+function makeOrderedGrid(gridElement) {
     // VIENE CICLATA 100 VOLTE LA CREAZIONE DI 1 CELLA NELLA GRID (+ SOTTO-PROGRAMMI)
     for (let index = 0; index < 100; index++) {
 
@@ -33,7 +39,6 @@ function makeGrid() {
         // !!!TODO: DA CAPIRE MEGLIO QUESTO PASSAGGIO!!!
         gridElement.append(gridContent);
     }
-
 }
 
 
@@ -69,30 +74,39 @@ function oddOrEven(reciveNumber) {
 
 
 
-//TENTATIVO FALLITO DI GENERARE GRIGLIA IN ORDINE CASUALE
-function randomGeneratedGrid() {
+// CREA UN ARRAY CON NUMERI PROGRESSIVI DA 1 A 100 DISPOSTI IN ORDINE CASUALE
+function randomGeneratedGrid(gridElement) {
 
     const vectorGrid = [];
-    i = 0;
-    let maxNumber = 100;
-
+    let i = 0;
     while (i < 100) {
 
-        const randomSlot = Math.floor(Math.random() * maxNumber) + 1;
+        const cellRandomNumber = Math.floor(Math.random() * 100) + 1;
 
-        maxNumber--;
+        while (!vectorGrid.includes(cellRandomNumber)) {
 
-        let emptySlot = randomSlot - 1;
+            // VARIABILE CONTENT CREA TAG DIV
+            const gridContent = document.createElement('div');
 
-        while (!isNaN(vectorGrid[emptySlot])) {
-            emptySlot++;
+            // ...A CUI ASSOCIA CLASSE grid-element DEL CSS
+            gridContent.className = 'grid-element';
+
+            // QUESTA ISTRUZIONE E' RESPONSABILE DEL NUMERO VISUALIZZATO NELLA CELLA
+            vectorGrid[i] = cellRandomNumber;
+            gridContent.innerHTML = cellRandomNumber;
+
+            // DETECT CLICK IN UNA CELLA
+            gridContent.addEventListener('click', function () {
+                // COLORA LA CELLA
+                makeCellColored(gridContent, i + 1);
+            });
+
+            // !!!TODO: DA CAPIRE MEGLIO QUESTO PASSAGGIO!!!
+            gridElement.append(gridContent);
+            i++;
+
         }
-
-        vectorGrid[emptySlot] = i + 1;
-
-        i++;
 
     }
 
-    console.log('La griglia in ordine casuale', vectorGrid);
 }

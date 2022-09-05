@@ -33,7 +33,8 @@ console.log('JS SCRIPT - OK');
 const clickButton = document.getElementById('grid-generator');
 
 clickButton.addEventListener('click', function () {
-    makeGrid();
+    const chainFunction = makeGrid();
+    makeOrderedGrid(chainFunction);
 });
 
 // RANDOMIZZARE I NUMERI
@@ -41,5 +42,6 @@ clickButton.addEventListener('click', function () {
 const randomGridButton = document.getElementById('random-grid-generator');
 
 randomGridButton.addEventListener('click', function () {
-    randomGeneratedGrid();
+    const chainFunction = makeGrid();
+    randomGeneratedGrid(chainFunction);
 });
