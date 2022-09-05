@@ -98,7 +98,7 @@ function randomGeneratedGrid(gridElement) {
             // DETECT CLICK IN UNA CELLA
             gridContent.addEventListener('click', function () {
                 // COLORA LA CELLA
-                makeCellColored(gridContent, i + 1);
+                makeCellColored(gridContent, cellRandomNumber);
             });
 
             // !!!TODO: DA CAPIRE MEGLIO QUESTO PASSAGGIO!!!
