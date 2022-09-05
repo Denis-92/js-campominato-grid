@@ -17,62 +17,6 @@ function makeGrid() {
 
 }
 
-// CREA GRID ORDINATA DA 1 A 100
-function makeOrderedGrid(gridElement) {
-    // VIENE CICLATA 100 VOLTE LA CREAZIONE DI 1 CELLA NELLA GRID (+ SOTTO-PROGRAMMI)
-    for (let index = 0; index < 100; index++) {
-
-        // VARIABILE CONTENT CREA TAG DIV
-        const gridContent = document.createElement('div');
-        // ...A CUI ASSOCIA CLASSE grid-element DEL CSS
-        gridContent.className = 'grid-element';
-
-        // QUESTA ISTRUZIONE E' RESPONSABILE DEL NUMERO VISUALIZZATO NELLA CELLA
-        gridContent.innerHTML = index + 1;
-
-        // DETECT CLICK IN UNA CELLA
-        gridContent.addEventListener('click', function () {
-            // COLORA LA CELLA
-            makeCellColored(gridContent, index + 1);
-        });
-
-        // !!!TODO: DA CAPIRE MEGLIO QUESTO PASSAGGIO!!!
-        gridElement.append(gridContent);
-    }
-}
-
-
-// SOTTO-PROGRAMMA: COLORA LA CELLA
-
-function makeCellColored(uncoloredCell, numberUncoloredCell) {
-
-    // CONTROLLO CELLA PARI O DISPARI
-    const isEven = oddOrEven(numberUncoloredCell);
-
-    // OUTPUT NUMERO CELLA
-    console.log(`Hai selezionato la ${numberUncoloredCell}° cella!`);
-
-    // DEFINITE AZIONI IN CASO DI PARI O DISPARI
-    if (isEven) {
-        // COLORA DI AZZURRO SE PARI
-        uncoloredCell.classList.add('even');
-    } else {
-        // COLORA DI VERDE SE DISPARI
-        uncoloredCell.classList.add('odd');
-    }
-}
-
-// SOTTO-PROGRAMMA: DEFINISCI SE UN DATO NUMERO E' PARI O DISPARI
-
-function oddOrEven(reciveNumber) {
-    if (reciveNumber % 2 === 0) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-
 
 // CREA UN ARRAY CON NUMERI PROGRESSIVI DA 1 A 100 DISPOSTI IN ORDINE CASUALE
 function randomGeneratedGrid(gridElement) {
@@ -109,4 +53,61 @@ function randomGeneratedGrid(gridElement) {
 
     }
 
+}
+
+// CREA GRID ORDINATA DA 1 A 100
+function makeOrderedGrid(gridElement) {
+
+    // VIENE CICLATA 100 VOLTE LA CREAZIONE DI 1 CELLA NELLA GRID (+ SOTTO-PROGRAMMI)
+    for (let index = 0; index < 100; index++) {
+
+        // VARIABILE CONTENT CREA TAG DIV
+        const gridContent = document.createElement('div');
+
+        // ...A CUI ASSOCIA CLASSE grid-element DEL CSS
+        gridContent.className = 'grid-element';
+
+        // QUESTA ISTRUZIONE E' RESPONSABILE DEL NUMERO VISUALIZZATO NELLA CELLA
+        gridContent.innerHTML = index + 1;
+
+        // DETECT CLICK IN UNA CELLA
+        gridContent.addEventListener('click', function () {
+            // COLORA LA CELLA
+            makeCellColored(gridContent, index + 1);
+        });
+
+        // !!!TODO: DA CAPIRE MEGLIO QUESTO PASSAGGIO!!!
+        gridElement.append(gridContent);
+    }
+}
+
+
+// SOTTO-PROGRAMMA LIVELLO 1 - COLORA LA CELLA
+
+function makeCellColored(uncoloredCell, numberUncoloredCell) {
+
+    // CONTROLLO CELLA PARI O DISPARI
+    const isEven = oddOrEven(numberUncoloredCell);
+
+    // OUTPUT NUMERO CELLA
+    console.log(`Hai selezionato la ${numberUncoloredCell}° cella!`);
+
+    // DEFINITE AZIONI IN CASO DI PARI O DISPARI
+    if (isEven) {
+        // COLORA DI AZZURRO SE PARI
+        uncoloredCell.classList.add('even');
+    } else {
+        // COLORA DI VERDE SE DISPARI
+        uncoloredCell.classList.add('odd');
+    }
+}
+
+// SOTTO-PROGRAMMA LIVELLO 2 - DEFINISCI SE UN DATO NUMERO E' PARI O DISPARI
+
+function oddOrEven(reciveNumber) {
+    if (reciveNumber % 2 === 0) {
+        return true;
+    } else {
+        return false;
+    }
 }
