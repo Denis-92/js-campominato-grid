@@ -33,7 +33,7 @@ body {
 #grid-background {
     max-width: 1200px;
     margin: 0 auto;
-    background-color: aqua;
+    background-color: purple;
     height: 100vh;
 }
 
@@ -48,4 +48,8 @@ body {
     width: 5vw;
     height: 5vw;
     border: 1px solid black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
