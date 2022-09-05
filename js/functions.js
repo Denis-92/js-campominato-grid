@@ -66,3 +66,33 @@ function oddOrEven(reciveNumber) {
         return false;
     }
 }
+
+
+
+//TENTATIVO FALLITO DI GENERARE GRIGLIA IN ORDINE CASUALE
+function randomGeneratedGrid() {
+
+    const vectorGrid = [];
+    i = 0;
+    let maxNumber = 100;
+
+    while (i < 100) {
+
+        const randomSlot = Math.floor(Math.random() * maxNumber) + 1;
+
+        maxNumber--;
+
+        let emptySlot = randomSlot - 1;
+
+        while (!isNaN(vectorGrid[emptySlot])) {
+            emptySlot++;
+        }
+
+        vectorGrid[emptySlot] = i + 1;
+
+        i++;
+
+    }
+
+    console.log('La griglia in ordine casuale', vectorGrid);
+}

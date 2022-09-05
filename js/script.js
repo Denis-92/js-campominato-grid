@@ -24,14 +24,22 @@ console.log('JS SCRIPT - OK');
 
 // 3) INSERIRE UN NUMERO PROGRESSIVO DA 1 A 100 IN OGNI CELLA DELLA MATRICE APPENA CREATA
 
+// 4) RILEVA CLICK SU OGNI CELLA
+
+// 5) CONTROLLA SE LA CELLA E' PARI O DISPARI ED ASSEGNA DI CONSEGUENZA IL COLORE
+
+// 6) COMUNICA MESSAGGIO IN OUTPUT RESTITUENDO IL NUMERO DELLA CELLA CLICCATA
+
 const clickButton = document.getElementById('grid-generator');
 
 clickButton.addEventListener('click', function () {
     makeGrid();
 });
 
-// 4) RILEVA CLICK SU OGNI CELLA
+// RANDOMIZZARE I NUMERI
 
-// 5) CONTROLLA SE LA CELLA E' PARI O DISPARI ED ASSEGNA DI CONSEGUENZA IL COLORE
+const randomGridButton = document.getElementById('random-grid-generator');
 
-// 6) COMUNICA MESSAGGIO IN OUTPUT RESTITUENDO IL NUMERO DELLA CELLA CLICCATA
+randomGridButton.addEventListener('click', function () {
+    randomGeneratedGrid();
+});

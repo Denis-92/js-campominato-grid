@@ -24,7 +24,8 @@ body {
     padding-top: 5%;
 }
 
-#grid-generator {
+#grid-generator,
+#random-grid-generator {
     width: 20%;
     margin: 5% 40%;
     padding: 10px 0;
