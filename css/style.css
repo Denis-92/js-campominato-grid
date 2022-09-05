@@ -21,14 +21,14 @@ body {
 .title {
     color: purple;
     text-align: center;
-    padding-top: 5%;
+    padding-top: 2%;
 }
 
 #grid-generator,
 #random-grid-generator {
     width: 20%;
-    margin: 5% 40%;
-    padding: 10px 0;
+    margin: 2% 40%;
+    padding: 5px 0;
 }
 
 #grid-background {
@@ -48,7 +48,7 @@ body {
 
 .grid-element {
     width: 10%;
-    height: 100px;
+    height: 50px;
     border: 1px solid black;
     color: white;
     display: flex;
