@@ -26,12 +26,8 @@ console.log('JS SCRIPT - OK');
 
 const clickButton = document.getElementById('grid-generator');
 
-const vectorOfNumbers = [];
-
-let i = 0;
-
 clickButton.addEventListener('click', function () {
-    makeGrid(i, vectorOfNumbers);
+    makeGrid();
 });
 
 // 4) RILEVA CLICK SU OGNI CELLA
