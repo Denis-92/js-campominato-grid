@@ -53,3 +53,11 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.even {
+    background-color: aqua;
+}
+
+.odd {
+    background-color: green;
+}
